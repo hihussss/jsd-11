@@ -6,8 +6,7 @@ import  Team  from "../class/team";
 
 test('generator', () => {
     const team = new Team();
-    const data = team.generatot();
-    for (const value of data) {
+    for (const value of team) {
         expect(value).toEqual(value);
     }
     

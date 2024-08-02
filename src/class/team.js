@@ -1,3 +1,5 @@
+/*eslint-env es6*/
+
 import { Bowman } from "./Bowman.js";
 import { Swordsman } from "./Swordsman.js";
 import { Magician } from "./Magician.js";
@@ -22,37 +24,38 @@ export default class Team {
     
     }
 
-    iterator() {
-        let index = 0
-        const size = this.members.length
-        const member = this.members
-        return {
-            next() {
-                if (index > (size-1)) {
-                    return {
-                        value: undefined,
-                        done: true
-                    }
-                }
-                index++;
-                return {
-                    value: member[index-1],
-                    done: false
-                }
-            }
-        }
+    // [Symbol.iterator] = function() {
+
+    //     let index = 0;
+    //     const size = this.members.length
+    //     const member = this.members
+
+    //     return {
+    //         next() {
+    //             if (index > (size-1)) {
+    //                 return {
+    //                     value: undefined,
+    //                     done: true
+    //                 }
+    //             }
+    //             index++;
+    //             return {
+    //                 value: member[index-1],
+    //                 done: false
+    //             }
+    //         }
+    //     }
+    // }
+
+    
+    *[Symbol.iterator]() {
+        yield this.members[0];
+        yield this.members[1];
+        yield this.members[2];
+        yield this.members[3];
+        yield this.members[4];
+        yield this.members[5];
     }
 
-    generatot() {
-        const member = this.members
-        function* gen() {
-            yield member[0]
-            yield member[1]
-            yield member[2]
-            yield member[3]
-            yield member[4]
-            yield member[5]
-          }
-        return gen() 
-    }
+    
 }

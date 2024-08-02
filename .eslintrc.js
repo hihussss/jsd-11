@@ -4,18 +4,20 @@ module.exports = {
       'es2021': true,
       'node': true
     },
-    'extends': 'eslint:recommended',
+    'extends':'eslint:recommended',
     'overrides': [
       {
         'files': ['**/*/*.test.js'],
         'plugins': ['jest'],
         'extends': ['plugin:jest/recommended'],
-        'rules': { 'jest/prefer-expect-assertions': 'off' }
+        'rules': { 'jest/prefer-expect-assertions': 'off'}
       }
     ],
     'parserOptions': {
       'ecmaVersion': 'latest',
-      'sourceType': 'module'
+      'sourceType': 'module',
+      
+
     },
-    'rules': {}
+    'rules': {},
   }
