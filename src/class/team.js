@@ -24,37 +24,27 @@ export default class Team {
     
     }
 
-    // [Symbol.iterator] = function() {
+    // [Symbol.iterator]() {
 
     //     let index = 0;
-    //     const size = this.members.length
     //     const member = this.members
 
     //     return {
     //         next() {
-    //             if (index > (size-1)) {
-    //                 return {
-    //                     value: undefined,
-    //                     done: true
-    //                 }
-    //             }
-    //             index++;
+    //             index += 1;
     //             return {
-    //                 value: member[index-1],
-    //                 done: false
-    //             }
+    //                 value: member[index],
+    //                 done: index >= member.length,
+    //                 }
     //         }
     //     }
     // }
 
     
     *[Symbol.iterator]() {
-        yield this.members[0];
-        yield this.members[1];
-        yield this.members[2];
-        yield this.members[3];
-        yield this.members[4];
-        yield this.members[5];
+        for (let i in this.members) {
+            yield this.members[i];
+        }   
     }
 
     
